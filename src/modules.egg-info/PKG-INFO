@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: modules
+Version: 0.0.0
+Summary: Electoral Symbols And Vote Detectionp
+Home-page: https://github.com/surajacharya62/Electoral_Symbols_And_Vote_Detection
+Author: surajacharya62
+Author-email: suraj.acharya62@gmail.com
+Project-URL: Bug Tracker, https://github.com/surajacharya62/Electoral_Symbols_And_Vote_Detection/issues
+License-File: LICENSE
+
+# Electoral_Symbols_And_Vote_Detection
+End to End implementation with MLOPS concept
+
+# Workflows followed
+
+1. create config.yaml
+2. create secrets.yaml [Optional] not created.
+3. create params.yaml
+4. create enity
+5. create configuration manager in src config
+6. create components
+7. create the pipeline
+8. create main.py
+9. create dvc.yaml
+

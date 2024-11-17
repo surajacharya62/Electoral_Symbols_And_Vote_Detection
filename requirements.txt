@@ -13,4 +13,8 @@ types-PyYAML
 scipy
 Flask
 Flask-Cors
+torch
+torchvision
+torchaudio
+-f https://download.pytorch.org/whl/cu118
 -e .
