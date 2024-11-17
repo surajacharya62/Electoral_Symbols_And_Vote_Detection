@@ -50,7 +50,7 @@ class VisualizePrediction():
         for i, (test_data, label) in enumerate(zip(test_set, predicted_labels)):
 
             image_name = test_data[2]
-            print(image_name,label)
+            print(test_data,label)
             image = os.path.join(test_images_path, image_name)            
             image = Image.open(image)                       
             # img_np = image.permute(1, 2, 0).numpy()         
