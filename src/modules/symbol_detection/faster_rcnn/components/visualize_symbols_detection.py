@@ -49,9 +49,9 @@ class VisualizePrediction():
                   
         for i, (test_data, label) in enumerate(zip(test_set, predicted_labels)):
 
-            image = test_data[0]
-            print(test_set,label)
-            image = os.path.join(test_images_path, image)            
+            image_name = test_data[2]
+            print(image_name,label)
+            image = os.path.join(test_images_path, image_name)            
             image = Image.open(image)                       
             # img_np = image.permute(1, 2, 0).numpy()         
             id_to_label = {value: key for key, value in label_to_id.items()}
