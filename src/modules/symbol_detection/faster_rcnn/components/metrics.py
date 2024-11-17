@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from objectdetect.objdetecteval.metrics import image_metrics as im, coco_metrics as cm
-from objectdetect.
 import os
 
 class Metrics():
