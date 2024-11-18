@@ -30,22 +30,30 @@ class ElectoralSymbolDataset(Dataset):
             
             # Handle directory case
             self.df = pd.read_csv(self.annotation_path)
+           
             self.imgs_list = sorted(os.listdir(image_path))
             print("Length of dataset:", len(self.imgs_list)) 
 
     def __getitem__(self, idx):
-        img_name = self.imgs_list[idx]
+        img_name = self.imgs_list[idx]      
         
+       
         if self.is_single_image:
             img_name = img_name  
-            img_path = os.path.join(self.image_path, img_name)
+            img_path = os.path.join(self.image_path, img_name)         
             
         else:
             img_path = os.path.join(self.image_path, img_name)
 
         img = Image.open(img_path).convert('RGB')
         filtered_rows = self.df[self.df['image_id'] == img_name]
+      
+        if filtered_rows.empty:
+            raise ValueError(f"No annotations found for image: {img_name}")
+    
+        
         boxes = filtered_rows[['x1', 'y1', 'x2', 'y2']].values.astype('float32')
+        
         labels = filtered_rows['label'].apply(lambda x: self.label_to_id[x]).values
         boxes = torch.as_tensor(boxes, dtype=torch.float32)
         labels = labels.astype(np.int64)

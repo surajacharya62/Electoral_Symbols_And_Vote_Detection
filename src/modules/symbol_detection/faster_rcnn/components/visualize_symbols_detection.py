@@ -49,8 +49,11 @@ class VisualizePrediction():
                   
         for i, (test_data, label) in enumerate(zip(test_set, predicted_labels)):
 
-            image_name = test_data[2]
-            print(test_data,label)
+            boxes = label[0]['boxes'] 
+            labels = label[0]['labels']
+            scores = label[0]['scores']
+            image_name = label[2] 
+            # image_name = test_data[2]            
             image = os.path.join(test_images_path, image_name)            
             image = Image.open(image)                       
             # img_np = image.permute(1, 2, 0).numpy()         
@@ -63,10 +66,7 @@ class VisualizePrediction():
             # actual_bounding_box = test_data[1]['boxes']
             # # image_name1 = test_data[2]
 
-            boxes = label[0]['boxes'] 
-            labels = label[0]['labels']
-            scores = label[0]['scores']
-            image_name = label[2]   
+              
     
             indices = torch_nms(boxes, scores)   
             # final_boxes, final_scores, final_labels = self.select_highest_confidence_per_class( 
@@ -115,7 +115,7 @@ class VisualizePrediction():
                     ax.add_patch(rect)
                     wrapped_lines = self.wrap_text(class_name, grid_width, font_properties, ax)
                     for i, line in enumerate(wrapped_lines):
-                        print('test_symbol', i)  # Change: Added print statement for debugging
+                        # print('test_symbol', i)  # Change: Added print statement for debugging
                         # Calculate the y position for each line
                         y_pos = y1 - i * (font_properties['size'] + 1)  # Adjust line spacing as needed
                         
@@ -139,7 +139,7 @@ class VisualizePrediction():
                             
          
             plt.axis('off')  # Optional: Remove axes for cleaner visualization
-            plt.savefig(f'../../../../../output/visualization/faster_rcnn/{image_name}.png', bbox_inches='tight', pad_inches=0, dpi=300)           
+            plt.savefig(f'./output/visualization/faster_rcnn/{image_name}.png', bbox_inches='tight', pad_inches=0, dpi=300)           
             plt.close()
             
                     

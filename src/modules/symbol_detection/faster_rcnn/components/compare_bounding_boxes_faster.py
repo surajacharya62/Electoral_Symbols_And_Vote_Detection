@@ -47,7 +47,7 @@ class CompareBoundingBox:
 
         
         data = pd.DataFrame(total_comparisions)
-        data.to_excel('./faster_rcnn_files/df_total_comparisions.xlsx')
+        data.to_excel('./artifacts/faster_rcnn_files/df_total_comparisions.xlsx')
         # data1 = pd.DataFrame(total_comparisions1)
         # data1.to_excel('df_total_comparisions1.xlsx')
 

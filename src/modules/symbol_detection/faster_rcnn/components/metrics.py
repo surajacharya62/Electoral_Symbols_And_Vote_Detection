@@ -60,7 +60,7 @@ class Metrics():
 
         # infer_df = im.get_inference_metrics_from_df(predd, trued)
         # infer_df.to_excel(os.path.join(files_path, 'infer_df.xlsx'))
-        class_summary = pd.read_excel('./faster_rcnn_files/total_comparisons_normalized.xlsx')
+        class_summary = pd.read_excel('./artifacts/faster_rcnn_files/total_comparisons_normalized.xlsx')
 
         class_summary_df = im.summarise_inference_metrics(class_summary)
         class_summary_df.to_excel(os.path.join(files_path, 'class_summary_df.xlsx'))
@@ -128,7 +128,7 @@ class Metrics():
 
         ##-----------------Precision Recall Curve Visualization
         # # obje.generate_precision_recall_curve(df, 'heart')
-        self.generate_separate_precision_recall_curves(df)
+        # self.generate_separate_precision_recall_curves(df)
 
         # =CONCAT("\hline ",TEXT(B2,"0.00")," & ",TEXT(G2,"0.00")," & ", TEXT(H2,"0.00")," & ",TEXT(I2,"0.00")," & ",TEXT(J2,"0.00")," \\")
 

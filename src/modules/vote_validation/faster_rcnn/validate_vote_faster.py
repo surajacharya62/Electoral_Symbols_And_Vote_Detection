@@ -7,13 +7,11 @@ import warnings
 from collections import Counter
 import os
 from PIL import Image
-
-from visualize.visualize_faster_rcnn import VisualizePrediction
-from utils.utils import torch_nms, reconstruct_grid_cells, is_stamp_valid, calculate_iou, is_stamp_for_symbol, parse_args,load_config
+from modules.symbol_detection.faster_rcnn.utils.faster_rcnn_utils import torch_nms, reconstruct_grid_cells,is_stamp_valid, calculate_iou, is_stamp_for_symbol
 
 warnings.filterwarnings('ignore', '.*clipping input data.*')
 
-visualize = VisualizePrediction()
+
 
 
 class ValidateVote():
