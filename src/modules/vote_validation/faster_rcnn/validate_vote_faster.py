@@ -19,12 +19,12 @@ class ValidateVote():
     def __init__(self):
         pass  
     
-    def validate_vote(self,test_set, test_images, pred_labels, label_to_id):   
+    def validate_vote(self,test_set, test_images, pred_labels, label_to_id, test_images_path):   
         """
         validating the vote whether it is valid or invalid comparing the distance between stamp bounding box with each symbols boundin box
         """
-        args =  parse_args()
-        config = load_config(args.config)
+        # args =  parse_args()
+        # config = load_config(args.config)
         margins = (1560, 300, 200, 200)  # top, bottom, left, right margins
         ballot_size = (2668, 3413)  # width, height of the ballot paper
         symbol_size = (189, 189)  # width, height of the symbols
@@ -41,7 +41,7 @@ class ValidateVote():
             # Convert tensor image to numpy array
             # img_np = img_tensor.permute(1, 2, 0).cpu().numpy()
             # img = test_data[0] 
-            image = os.path.join(config['data']['test_image_path'], test_image)            
+            image = os.path.join(test_images_path, test_image)            
             image = Image.open(image)    
             image_name = test_data[2]  
             # print(image_name)        
