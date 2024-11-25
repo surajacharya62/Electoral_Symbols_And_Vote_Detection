@@ -1,6 +1,6 @@
 from modules.symbol_detection.faster_rcnn.constants import *
 from src.utils.common import read_yaml,create_directories
-from modules.symbol_detection.faster_rcnn.entity.config_entity import (DataIngestionConfig)
+from modules.symbol_detection.faster_rcnn.entity.config_entity import (DataIngestionConfig,PrepareBaseModelConfig,EvaluationConfig)
 
 
 class ConfigurationManager:
@@ -25,6 +25,44 @@ class ConfigurationManager:
             local_data_file=config.local_data_file,
             unzip_dir=config.unzip_dir
             
-            )
-        
+            )        
         return data_ingestion_config
+    
+
+    def get_prepare_base_model_config(self) -> PrepareBaseModelConfig:
+        config = self.config.base_model
+        
+        create_directories([config.root_dir])
+
+        prepare_base_model_config = PrepareBaseModelConfig(
+            root_dir=Path(config.root_dir),
+            base_model_path=Path(config.base_model_path),
+            # updated_base_model_path=Path(config.updated_base_model_path),
+            params_image_size=self.params.IMAGE_SIZE,
+            params_learning_rate=self.params.LEARNING_RATE,
+            params_include_top=self.params.INCLUDE_TOP,
+            params_weights=self.params.WEIGHTS,
+            params_classes=self.params.CLASSES
+        )
+
+        return prepare_base_model_config
+    
+    
+    def get_evaluation_config(self)->EvaluationConfig:
+      
+      config = self.config.base_model
+
+      eval_config = EvaluationConfig(
+                root_dir = Path(config.root_dir),
+                path_of_model=Path(config.base_model_path),
+                test_images_path=Path(config.test_images_path),
+                annotations_path=Path(config.annotations_path),
+                faster_rcnn_files_path=Path(config.faster_rcnn_files_path),
+                mlflow_uri="",
+                all_params=self.params,
+                params_image_size=self.params.IMAGE_SIZE,
+                params_batch_size=self.params.BATCH_SIZE,
+                # classes=self.params.CLASSES                
+          )
+      
+      return eval_config

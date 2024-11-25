@@ -251,7 +251,7 @@ class ValidateVote():
                     ax.text(x1, y1, class_name, color='blue', fontsize=8)  
                     
                     ax.axis('off')  # Optional: Remove axes for cleaner visualization
-                    plt.savefig(f'./output/vote_validation/yolo/no_stamp_{image_name}.jpg', bbox_inches='tight', pad_inches=0, dpi=600)
+                    plt.savefig(f'./output/vote_validation/ /no_stamp_{image_name}.jpg', bbox_inches='tight', pad_inches=0, dpi=600)
                     plt.close()
                     results.append((image_name, 'no vote',actual_label,'invalid', 'no vote', 'no vote','nan'))
                     print('Symbols' + str(id_to_label))

@@ -387,3 +387,586 @@ x==================x]
 [2024-11-18 21:32:29,889: INFO: common: yaml file: config\config.yaml loaded successfully]
 [2024-11-18 21:32:29,889: INFO: common: yaml file: params.yaml loaded successfully]
 [2024-11-18 21:32:29,889: INFO: common: created directory at: artifacts]
+[2024-11-23 17:42:48,280: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-23 17:42:48,294: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-23 17:42:48,296: INFO: common: created directory at: artifacts]
+[2024-11-23 17:51:29,383: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-23 17:51:29,386: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-23 17:51:29,388: INFO: common: created directory at: artifacts]
+[2024-11-24 16:42:40,370: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-24 16:42:40,380: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-24 16:42:40,386: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-24 16:42:40,396: INFO: common: created directory at: artifacts]
+[2024-11-24 16:42:40,413: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-24 16:42:40,415: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-24 16:42:53,624: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-24 16:42:54,470: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-24 16:54:59,304: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-24 16:54:59,306: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-24 16:54:59,306: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-24 16:54:59,308: INFO: common: created directory at: artifacts]
+[2024-11-24 16:54:59,308: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-24 16:54:59,309: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-24 16:55:12,725: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-24 16:55:13,479: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-24 16:55:13,479: INFO: main: *******************]
+[2024-11-24 16:55:13,479: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-24 16:55:13,481: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-24 16:55:13,482: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-24 16:55:13,483: INFO: common: created directory at: artifacts]
+[2024-11-24 16:55:13,483: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-24 16:55:13,484: ERROR: main: "'ConfigBox' object has no attribute 'base_model_path'"]
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'base_model_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'base_model_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'base_model_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'base_model_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'base_model_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'base_model_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'base_model_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 29, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_02_prepare_base_model.py", line 14, in main
+    prepare_base_model_config = config.get_prepare_base_model_config()
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\config\configuration.py", line 39, in get_prepare_base_model_config
+    base_model_path=Path(config.base_model_path),
+                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'base_model_path'"
+[2024-11-24 17:00:41,356: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-24 17:00:41,364: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-24 17:00:41,366: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-24 17:00:41,366: INFO: common: created directory at: artifacts]
+[2024-11-24 17:00:41,367: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-24 17:00:41,368: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-24 17:00:54,477: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-24 17:00:55,164: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-24 17:00:55,165: INFO: main: *******************]
+[2024-11-24 17:00:55,165: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-24 17:00:55,166: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-24 17:00:55,168: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-24 17:00:55,168: INFO: common: created directory at: artifacts]
+[2024-11-24 17:00:55,169: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-24 17:00:55,169: ERROR: main: "'ConfigBox' object has no attribute 'updated_base_model_path'"]
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'updated_base_model_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'updated_base_model_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'updated_base_model_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'updated_base_model_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'updated_base_model_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'updated_base_model_path'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'updated_base_model_path'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 29, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_02_prepare_base_model.py", line 14, in main
+    prepare_base_model_config = config.get_prepare_base_model_config()
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\config\configuration.py", line 40, in get_prepare_base_model_config
+    updated_base_model_path=Path(config.updated_base_model_path),
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'updated_base_model_path'"
+[2024-11-24 17:02:04,253: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-24 17:02:04,254: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-24 17:02:04,256: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-24 17:02:04,256: INFO: common: created directory at: artifacts]
+[2024-11-24 17:02:04,257: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-24 17:02:04,257: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-24 17:02:17,375: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-24 17:02:18,066: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-24 17:02:18,066: INFO: main: *******************]
+[2024-11-24 17:02:18,067: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-24 17:02:18,069: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-24 17:02:18,071: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-24 17:02:18,071: INFO: common: created directory at: artifacts]
+[2024-11-24 17:02:18,072: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-24 17:02:18,072: ERROR: main: PrepareBaseModelConfig.__init__() missing 1 required positional argument: 'updated_base_model_path']
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 29, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_02_prepare_base_model.py", line 14, in main
+    prepare_base_model_config = config.get_prepare_base_model_config()
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\config\configuration.py", line 37, in get_prepare_base_model_config
+    prepare_base_model_config = PrepareBaseModelConfig(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PrepareBaseModelConfig.__init__() missing 1 required positional argument: 'updated_base_model_path'
+[2024-11-24 17:03:50,602: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-24 17:03:50,604: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-24 17:03:50,605: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-24 17:03:50,605: INFO: common: created directory at: artifacts]
+[2024-11-24 17:03:50,606: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-24 17:03:50,606: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-24 17:04:03,658: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-24 17:04:04,340: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-24 17:04:04,340: INFO: main: *******************]
+[2024-11-24 17:04:04,340: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-24 17:04:04,341: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-24 17:04:04,343: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-24 17:04:04,344: INFO: common: created directory at: artifacts]
+[2024-11-24 17:04:04,344: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-24 17:04:04,344: INFO: main: f>>>>> stage {STAGE_NAME} completed <<<<
+
+x===================x]
+[2024-11-24 17:04:04,344: INFO: main: **************]
+[2024-11-24 17:04:04,345: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-24 17:04:04,346: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-24 17:04:04,347: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-24 17:04:04,348: INFO: common: created directory at: artifacts]
+[2024-11-24 17:04:04,348: ERROR: main: EvaluationConfig.__init__() missing 2 required positional arguments: 'params_image_size' and 'params_batch_size']
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 43, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_03_model_evaluation.py", line 17, in main
+    evaluation_config = config.get_evaluation_config()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\config\configuration.py", line 55, in get_evaluation_config
+    eval_config = EvaluationConfig(
+                  ^^^^^^^^^^^^^^^^^
+TypeError: EvaluationConfig.__init__() missing 2 required positional arguments: 'params_image_size' and 'params_batch_size'
+[2024-11-25 17:26:47,674: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-25 17:26:47,689: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 17:26:47,711: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 17:26:47,716: INFO: common: created directory at: artifacts]
+[2024-11-25 17:26:47,717: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-25 17:26:47,718: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 17:27:01,697: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 17:27:03,713: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-25 17:27:03,714: INFO: main: *******************]
+[2024-11-25 17:27:03,715: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-25 17:27:03,720: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 17:27:03,724: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 17:27:03,726: INFO: common: created directory at: artifacts]
+[2024-11-25 17:27:03,726: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 17:27:03,727: INFO: main: f>>>>> stage {STAGE_NAME} completed <<<<
+
+x===================x]
+[2024-11-25 17:27:03,727: INFO: main: **************]
+[2024-11-25 17:27:03,728: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-25 17:27:03,731: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 17:27:03,734: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 17:27:03,736: INFO: common: created directory at: artifacts]
+[2024-11-25 17:27:03,847: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 17:27:03,848: ERROR: main: 'PrepareBaseModel' object has no attribute 'load_state_dict']
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 43, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_03_model_evaluation.py", line 25, in main
+    model_predictions,images_name=evaluate.make_predictions(dataset_loader, base_model)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\components\model_evaluation.py", line 54, in make_predictions
+    faster_rcnn_model.load_state_dict(torch.load(self.config.path_of_model, map_location=device))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PrepareBaseModel' object has no attribute 'load_state_dict'
+[2024-11-25 17:39:55,103: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-25 17:39:55,107: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 17:39:55,109: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 17:39:55,110: INFO: common: created directory at: artifacts]
+[2024-11-25 17:39:55,110: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-25 17:39:55,112: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 17:40:09,627: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1-6haawpnaPTHxclM7WSrxhiO-Vwx2hRG/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 17:40:11,311: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-25 17:40:11,312: INFO: main: *******************]
+[2024-11-25 17:40:11,313: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-25 17:40:11,319: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 17:40:11,322: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 17:40:11,324: INFO: common: created directory at: artifacts]
+[2024-11-25 17:40:11,325: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 17:40:11,326: INFO: main: f>>>>> stage {STAGE_NAME} completed <<<<
+
+x===================x]
+[2024-11-25 17:40:11,327: INFO: main: **************]
+[2024-11-25 17:40:11,327: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-25 17:40:11,336: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 17:40:11,339: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 17:40:11,340: INFO: common: created directory at: artifacts]
+[2024-11-25 17:40:11,453: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 17:48:31,556: ERROR: main: No annotations found for image: image_0050.jpg]
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 43, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_03_model_evaluation.py", line 26, in main
+    model_predictions, images_name=evaluate.make_predictions(dataset_loader, model)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\components\model_evaluation.py", line 60, in make_predictions
+    for images, imageids, imagenames, target in dataset_loader:
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 633, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 677, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\components\electoral_symbol_dataset.py", line 52, in __getitem__
+    raise ValueError(f"No annotations found for image: {img_name}")
+ValueError: No annotations found for image: image_0050.jpg
+[2024-11-25 18:35:24,224: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-25 18:35:24,252: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 18:35:24,267: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 18:35:24,269: INFO: common: created directory at: artifacts]
+[2024-11-25 18:35:24,269: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-25 18:35:24,272: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1Yak55tdjwSDY8r50HEVGpQSXLpa3wZWy/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 18:35:37,369: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1Yak55tdjwSDY8r50HEVGpQSXLpa3wZWy/view?usp=drive_link into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 18:35:37,382: ERROR: main: File is not a zip file]
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 14, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_01_data_ingestion.py", line 18, in main
+    data_ingestion.extract_zip_file()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\components\data_ingestion.py", line 42, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file,'r') as zip_ref:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1312, in __init__
+    self._RealGetContents()
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1379, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2024-11-25 18:38:57,443: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-25 18:38:57,444: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 18:38:57,448: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 18:38:57,448: INFO: common: created directory at: artifacts]
+[2024-11-25 18:38:57,448: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-25 18:38:57,450: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 18:39:04,913: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 18:39:05,200: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-25 18:39:05,200: INFO: main: *******************]
+[2024-11-25 18:39:05,200: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-25 18:39:05,203: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 18:39:05,203: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 18:39:05,203: INFO: common: created directory at: artifacts]
+[2024-11-25 18:39:05,203: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 18:39:05,208: INFO: main: f>>>>> stage {STAGE_NAME} completed <<<<
+
+x===================x]
+[2024-11-25 18:39:05,208: INFO: main: **************]
+[2024-11-25 18:39:05,208: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-25 18:39:05,212: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 18:39:05,215: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 18:39:05,216: INFO: common: created directory at: artifacts]
+[2024-11-25 18:39:05,257: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 18:39:05,897: ERROR: main: [Errno 2] No such file or directory: 'artifacts\\trained_models\\trained_model_fasterrcnn_6_.pth']
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 43, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_03_model_evaluation.py", line 26, in main
+    model_predictions, images_name=evaluate.make_predictions(dataset_loader, model)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\components\model_evaluation.py", line 54, in make_predictions
+    faster_rcnn_model.load_state_dict(torch.load(self.config.path_of_model, map_location=device))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\serialization.py", line 791, in load
+    with _open_file_like(f, 'rb') as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\serialization.py", line 271, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\serialization.py", line 252, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\trained_models\\trained_model_fasterrcnn_6_.pth'
+[2024-11-25 18:39:21,361: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-25 18:39:21,381: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 18:39:21,385: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 18:39:21,385: INFO: common: created directory at: artifacts]
+[2024-11-25 18:39:21,390: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-25 18:39:21,390: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 18:39:28,732: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 18:39:29,038: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-25 18:39:29,038: INFO: main: *******************]
+[2024-11-25 18:39:29,038: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-25 18:39:29,041: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 18:39:29,041: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 18:39:29,041: INFO: common: created directory at: artifacts]
+[2024-11-25 18:39:29,041: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 18:39:29,045: INFO: main: f>>>>> stage {STAGE_NAME} completed <<<<
+
+x===================x]
+[2024-11-25 18:39:29,045: INFO: main: **************]
+[2024-11-25 18:39:29,045: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-25 18:39:29,047: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 18:39:29,047: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 18:39:29,051: INFO: common: created directory at: artifacts]
+[2024-11-25 18:39:29,096: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 18:39:29,863: ERROR: main: Error(s) in loading state_dict for FasterRCNN:
+	size mismatch for roi_heads.box_predictor.cls_score.weight: copying a param with shape torch.Size([45, 1024]) from checkpoint, the shape in current model is torch.Size([44, 1024]).
+	size mismatch for roi_heads.box_predictor.cls_score.bias: copying a param with shape torch.Size([45]) from checkpoint, the shape in current model is torch.Size([44]).
+	size mismatch for roi_heads.box_predictor.bbox_pred.weight: copying a param with shape torch.Size([180, 1024]) from checkpoint, the shape in current model is torch.Size([176, 1024]).
+	size mismatch for roi_heads.box_predictor.bbox_pred.bias: copying a param with shape torch.Size([180]) from checkpoint, the shape in current model is torch.Size([176]).]
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 43, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_03_model_evaluation.py", line 26, in main
+    model_predictions, images_name=evaluate.make_predictions(dataset_loader, model)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\components\model_evaluation.py", line 54, in make_predictions
+    faster_rcnn_model.load_state_dict(torch.load(self.config.path_of_model, map_location=device))
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\nn\modules\module.py", line 2041, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for FasterRCNN:
+	size mismatch for roi_heads.box_predictor.cls_score.weight: copying a param with shape torch.Size([45, 1024]) from checkpoint, the shape in current model is torch.Size([44, 1024]).
+	size mismatch for roi_heads.box_predictor.cls_score.bias: copying a param with shape torch.Size([45]) from checkpoint, the shape in current model is torch.Size([44]).
+	size mismatch for roi_heads.box_predictor.bbox_pred.weight: copying a param with shape torch.Size([180, 1024]) from checkpoint, the shape in current model is torch.Size([176, 1024]).
+	size mismatch for roi_heads.box_predictor.bbox_pred.bias: copying a param with shape torch.Size([180]) from checkpoint, the shape in current model is torch.Size([176]).
+[2024-11-25 20:10:04,761: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-25 20:10:04,761: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 20:10:04,761: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 20:10:04,761: INFO: common: created directory at: artifacts]
+[2024-11-25 20:10:04,761: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-25 20:10:04,761: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 20:10:11,754: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 20:10:12,002: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-25 20:10:12,002: INFO: main: *******************]
+[2024-11-25 20:10:12,002: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-25 20:10:12,002: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 20:10:12,002: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 20:10:12,002: INFO: common: created directory at: artifacts]
+[2024-11-25 20:10:12,002: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 20:10:12,002: INFO: main: f>>>>> stage {STAGE_NAME} completed <<<<
+
+x===================x]
+[2024-11-25 20:10:12,002: INFO: main: **************]
+[2024-11-25 20:10:12,010: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-25 20:10:12,011: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 20:10:12,015: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 20:10:12,015: INFO: common: created directory at: artifacts]
+[2024-11-25 20:10:12,037: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 20:10:12,949: ERROR: main: No annotations found for image: image_0000.jpg]
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 43, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_03_model_evaluation.py", line 26, in main
+    model_predictions, images_name=evaluate.make_predictions(dataset_loader, model)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\components\model_evaluation.py", line 60, in make_predictions
+    for images, imageids, imagenames, target in dataset_loader:
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 633, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\dataloader.py", line 677, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\utils\data\_utils\fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\components\electoral_symbol_dataset.py", line 52, in __getitem__
+    raise ValueError(f"No annotations found for image: {img_name}")
+ValueError: No annotations found for image: image_0000.jpg
+[2024-11-25 20:12:03,228: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-25 20:12:03,228: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 20:12:03,244: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 20:12:03,244: INFO: common: created directory at: artifacts]
+[2024-11-25 20:12:03,244: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-25 20:12:03,244: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 20:12:10,737: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 20:12:11,030: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-25 20:12:11,032: INFO: main: *******************]
+[2024-11-25 20:12:11,032: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-25 20:12:11,032: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 20:12:11,032: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 20:12:11,032: INFO: common: created directory at: artifacts]
+[2024-11-25 20:12:11,032: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 20:12:11,032: INFO: main: f>>>>> stage {STAGE_NAME} completed <<<<
+
+x===================x]
+[2024-11-25 20:12:11,039: INFO: main: **************]
+[2024-11-25 20:12:11,039: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-25 20:12:11,040: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 20:12:11,041: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 20:12:11,042: INFO: common: created directory at: artifacts]
+[2024-11-25 20:12:11,061: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 20:44:27,820: ERROR: main: [Errno 2] No such file or directory: 'D:\\Oslo\\OsloMet\\Fourth semester\\Electoral_Symbols_And_Vote_Detection_MLOPS\\Electoral_Symbols_And_Vote_Detection\\output\\vote_validation\\yolo\\no_stamp_image_0037.jpg.jpg']
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 43, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_03_model_evaluation.py", line 32, in main
+    evaluate.vote_validation(test_set, images_name, model_predictions)
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\components\model_evaluation.py", line 90, in vote_validation
+    vote_validate.validate_vote(test_set, test_images, predictions, self.true_annotation_labels, self.config.test_images_path)
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\vote_validation\faster_rcnn\validate_vote.py", line 254, in validate_vote
+    plt.savefig(f'./output/vote_validation/yolo/no_stamp_{image_name}.jpg', bbox_inches='tight', pad_inches=0, dpi=600)
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\pyplot.py", line 1228, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\figure.py", line 3395, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\backend_bases.py", line 2204, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\backend_bases.py", line 2054, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\backends\backend_agg.py", line 513, in print_jpg
+    self._print_pil(filename_or_obj, "jpeg", pil_kwargs, metadata)
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\backends\backend_agg.py", line 445, in _print_pil
+    mpl.image.imsave(
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\image.py", line 1676, in imsave
+    image.save(fname, **pil_kwargs)
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\PIL\Image.py", line 2600, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Oslo\\OsloMet\\Fourth semester\\Electoral_Symbols_And_Vote_Detection_MLOPS\\Electoral_Symbols_And_Vote_Detection\\output\\vote_validation\\yolo\\no_stamp_image_0037.jpg.jpg'
+[2024-11-25 21:32:28,589: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-25 21:32:28,607: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 21:32:28,607: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 21:32:28,614: INFO: common: created directory at: artifacts]
+[2024-11-25 21:32:28,614: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-25 21:32:28,616: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 21:32:37,427: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-25 21:32:37,971: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-25 21:32:37,971: INFO: main: *******************]
+[2024-11-25 21:32:37,971: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-25 21:32:37,985: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 21:32:37,990: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 21:32:37,992: INFO: common: created directory at: artifacts]
+[2024-11-25 21:32:37,992: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 21:32:37,992: INFO: main: f>>>>> stage {STAGE_NAME} completed <<<<
+
+x===================x]
+[2024-11-25 21:32:37,992: INFO: main: **************]
+[2024-11-25 21:32:37,992: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-25 21:32:38,000: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-25 21:32:38,003: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-25 21:32:38,003: INFO: common: created directory at: artifacts]
+[2024-11-25 21:32:38,064: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-25 22:01:55,636: INFO: main: >>>>>> stage {STAGE_NAME} completed <<<<
+
+x======x]
