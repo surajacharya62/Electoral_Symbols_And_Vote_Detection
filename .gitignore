@@ -161,6 +161,6 @@ cython_debug/
 
 artifacts/
 !artifacts/trained_models/
-!artifacts/trained_models/trained_model_fasterrcnn_6_28.pth
+!artifacts/trained_models/trained_model_fasterrcnn_6_11.pth
 src/objectdetect/
 src/modules.egg-info/
