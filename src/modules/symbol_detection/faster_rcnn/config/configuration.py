@@ -58,7 +58,7 @@ class ConfigurationManager:
                 test_images_path=Path(config.test_images_path),
                 annotations_path=Path(config.annotations_path),
                 faster_rcnn_files_path=Path(config.faster_rcnn_files_path),
-                mlflow_uri="",
+                mlflow_uri="https://dagshub.com/surajacharya62/Electoral_Symbols_And_Vote_Detection.mlflow",
                 all_params=self.params,
                 params_image_size=self.params.IMAGE_SIZE,
                 params_batch_size=self.params.BATCH_SIZE,

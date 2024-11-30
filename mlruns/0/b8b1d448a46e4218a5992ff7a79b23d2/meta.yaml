@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Oslo/OsloMet/Fourth%20semester/Electoral_Symbols_And_Vote_Detection_MLOPS/Electoral_Symbols_And_Vote_Detection/mlruns/0/b8b1d448a46e4218a5992ff7a79b23d2/artifacts
+end_time: 1732914752398
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b8b1d448a46e4218a5992ff7a79b23d2
+run_name: kindly-zebra-144
+run_uuid: b8b1d448a46e4218a5992ff7a79b23d2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732914752323
+status: 3
+tags: []
+user_id: suraj

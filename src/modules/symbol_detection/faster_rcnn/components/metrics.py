@@ -154,6 +154,8 @@ class Metrics():
         print(f"Micro F1 Score: {f1_micro}")
         print(f"Micro-average Precision: {precision_micro}")
         print(f"Micro-average Recall: {recall_micro}")
+
+        return macro_f1_score, f1_micro, precision_micro, recall_micro
        
 
 

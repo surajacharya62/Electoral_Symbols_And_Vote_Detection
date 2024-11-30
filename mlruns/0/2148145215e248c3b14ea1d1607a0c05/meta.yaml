@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Oslo/OsloMet/Fourth%20semester/Electoral_Symbols_And_Vote_Detection_MLOPS/Electoral_Symbols_And_Vote_Detection/mlruns/0/2148145215e248c3b14ea1d1607a0c05/artifacts
+end_time: 1732970918060
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2148145215e248c3b14ea1d1607a0c05
+run_name: bemused-koi-572
+run_uuid: 2148145215e248c3b14ea1d1607a0c05
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732970917967
+status: 3
+tags: []
+user_id: suraj

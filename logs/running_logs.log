@@ -970,3 +970,114 @@ x===================x]
 [2024-11-25 22:01:55,636: INFO: main: >>>>>> stage {STAGE_NAME} completed <<<<
 
 x======x]
+[2024-11-28 16:52:45,025: ERROR: utils: Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+]
+[2024-11-29 21:37:11,814: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-29 21:37:11,814: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-29 21:37:11,830: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-29 21:37:11,830: INFO: common: created directory at: artifacts]
+[2024-11-29 21:37:11,830: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-29 21:37:11,830: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-29 21:37:19,159: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-29 21:37:19,661: INFO: main: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+x==================x]
+[2024-11-29 21:37:19,662: INFO: main: *******************]
+[2024-11-29 21:37:19,662: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-29 21:37:19,667: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-29 21:37:19,672: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-29 21:37:19,674: INFO: common: created directory at: artifacts]
+[2024-11-29 21:37:19,677: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-29 21:37:19,679: INFO: main: >>>>> stage Prepare base model stage completed <<<<
+
+x===================x]
+[2024-11-29 21:37:19,682: INFO: main: **************]
+[2024-11-29 21:37:19,683: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-29 21:37:19,689: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-29 21:37:19,695: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-29 21:37:19,697: INFO: common: created directory at: artifacts]
+[2024-11-29 21:37:19,751: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-29 21:37:21,191: ERROR: main: [Errno 2] No such file or directory: 'artifacts\\trained_models\\trained_model_fasterrcnn_6_11.pth']
+Traceback (most recent call last):
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\main.py", line 43, in <module>
+    obj.main()
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\pipeline\stage_03_model_evaluation_with_mlflow.py", line 26, in main
+    model_predictions, images_name=evaluate.make_predictions(dataset_loader, model)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Oslo\OsloMet\Fourth semester\Electoral_Symbols_And_Vote_Detection_MLOPS\Electoral_Symbols_And_Vote_Detection\src\modules\symbol_detection\faster_rcnn\components\model_evaluation.py", line 59, in make_predictions
+    faster_rcnn_model.load_state_dict(torch.load(self.config.path_of_model, map_location=device))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\serialization.py", line 791, in load
+    with _open_file_like(f, 'rb') as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\serialization.py", line 271, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\serialization.py", line 252, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'artifacts\\trained_models\\trained_model_fasterrcnn_6_11.pth'
+[2024-11-29 21:42:47,227: INFO: main: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-29 21:42:47,227: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-29 21:42:47,227: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-29 21:42:47,227: INFO: common: created directory at: artifacts]
+[2024-11-29 21:42:47,227: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-29 21:42:47,227: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-29 21:43:19,078: INFO: main: *******************]
+[2024-11-29 21:43:19,078: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-29 21:43:19,078: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-29 21:43:19,078: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-29 21:43:19,078: INFO: common: created directory at: artifacts]
+[2024-11-29 21:43:19,078: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-29 21:43:19,078: INFO: main: >>>>> stage Prepare base model stage completed <<<<
+
+x===================x]
+[2024-11-29 21:43:19,078: INFO: main: **************]
+[2024-11-29 21:43:19,078: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-29 21:43:19,078: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-29 21:43:19,078: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-29 21:43:19,091: INFO: common: created directory at: artifacts]
+[2024-11-29 21:43:19,096: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-29 22:14:23,898: INFO: main: >>>>>> stage Model evaluation stage completed <<<<
+
+x======x]
+[2024-11-29 22:25:29,292: INFO: main: *******************]
+[2024-11-29 22:25:29,292: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-29 22:25:29,301: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-29 22:25:29,302: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-29 22:25:29,303: INFO: common: created directory at: artifacts]
+[2024-11-29 22:25:29,303: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-29 22:25:29,303: INFO: main: >>>>> stage Prepare base model stage completed <<<<
+
+x===================x]
+[2024-11-29 22:25:29,304: INFO: main: **************]
+[2024-11-29 22:25:29,304: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-29 22:25:29,305: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-29 22:25:29,306: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-29 22:25:29,307: INFO: common: created directory at: artifacts]
+[2024-11-29 22:25:29,322: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-29 22:54:08,479: INFO: common: json file saved at: scores.json]
+[2024-11-29 22:55:53,522: INFO: main: >>>>>> stage Model evaluation stage completed <<<<
+
+x======x]
+[2024-11-30 13:09:53,631: INFO: main: *******************]
+[2024-11-30 13:09:53,633: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-30 13:09:53,654: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 13:09:53,677: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 13:09:53,677: INFO: common: created directory at: artifacts]
+[2024-11-30 13:09:53,678: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-30 13:09:53,678: INFO: main: >>>>> stage Prepare base model stage completed <<<<
+
+x===================x]
+[2024-11-30 13:09:53,678: INFO: main: **************]
+[2024-11-30 13:09:53,678: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-30 13:09:53,683: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 13:09:53,688: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 13:09:53,688: INFO: common: created directory at: artifacts]
+[2024-11-30 13:09:53,742: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-30 13:48:37,586: INFO: common: json file saved at: scores.json]
+[2024-11-30 13:48:38,081: INFO: main: >>>>>> stage Model evaluation stage completed <<<<
+
+x======x]

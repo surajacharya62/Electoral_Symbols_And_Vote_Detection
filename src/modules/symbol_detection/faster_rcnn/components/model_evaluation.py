@@ -9,6 +9,11 @@ from torch.utils.data import DataLoader
 from modules.symbol_detection.faster_rcnn.entity.config_entity import EvaluationConfig
 import torch
 import os
+from src.utils.common import save_json
+from pathlib import Path
+import mlflow
+from urllib.parse import urlparse
+
 
 
 class Evalaution:  
@@ -103,12 +108,36 @@ class Evalaution:
 
         metrics = Metrics()
         metrics.metrics(predictions, self.config.annotations_path, self.true_annotation_labels, self.config.faster_rcnn_files_path)
-        metrics.call_metrics(self.config.faster_rcnn_files_path)
+        self.f1_macro, self.f1_micro, self.precision, self.recall = metrics.call_metrics(self.config.faster_rcnn_files_path)
+        self.save_scores()
+    
 
+    def save_scores(self):
+        scores = {"F1 Macro": self.f1_macro, "F1 Micro":self.f1_micro, "Precision": self.precision, "Recall":self.recall}
+        save_json(path=Path("scores.json"), data=scores)
 
 
     
-
+    def log_into_mlflow(self):
+        mlflow.set_registry_uri(self.config.mlflow_uri)
+        tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
+        
+        with mlflow.start_run():
+            mlflow.log_params(self.config.all_params)
+            print("mlflow--------------")
+            mlflow.log_metrics(
+                {"F1 Macro": self.f1_macro, "F1 Micro":self.f1_micro, "Precision": self.precision, "Recall":self.recall}
+            )
+            # # Model registry does not work with file store
+            # if tracking_url_type_store != "file":
+ 
+            #     # Register the model
+            #     # There are other ways to use the Model Registry, which depends on the use case,
+            #     # please refer to the doc for more information:
+            #     # https://mlflow.org/docs/latest/model-registry.html#api-workflow
+            #     mlflow.keras.log_model(self.model, "model", registered_model_name="VGG16Model")
+            # else:
+            #     mlflow.keras.log_model(self.model, "model")
 
     
 
