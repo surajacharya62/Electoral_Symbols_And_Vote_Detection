@@ -1,5 +1,5 @@
 from modules.symbol_detection.faster_rcnn.constants import *
-from src.utils.common import read_yaml,create_directories
+from modules.utils.common import read_yaml,create_directories
 from modules.symbol_detection.faster_rcnn.entity.config_entity import (DataIngestionConfig,PrepareBaseModelConfig,EvaluationConfig)
 
 

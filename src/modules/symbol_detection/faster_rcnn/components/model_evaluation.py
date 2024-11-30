@@ -5,22 +5,29 @@ from modules.symbol_detection.faster_rcnn.components.reshape_data import Reshape
 from modules.symbol_detection.faster_rcnn.components.metrics import Metrics
 from modules.vote_validation.faster_rcnn.validate_vote import ValidateVote
 from modules.symbol_detection.faster_rcnn.utils.faster_rcnn_utils import label_to_id,get_transform,collate_fn
-from torch.utils.data import DataLoader
 from modules.symbol_detection.faster_rcnn.entity.config_entity import EvaluationConfig
+from src.utils.common import save_json
+
 import torch
 import os
-from src.utils.common import save_json
+from torch.utils.data import DataLoader
 from pathlib import Path
 import mlflow
 from urllib.parse import urlparse
+from dotenv import load_dotenv
 
 
+
+load_dotenv() # Loading the environment variables
 
 class Evalaution:  
 
     def __init__(self, config:EvaluationConfig):
         self.config = config
         self.true_annotation_labels = label_to_id(self.config.annotations_path)
+        self.mlflow_uri = os.getenv("MLFLOW_TRACKING_URI")
+        self.username = os.getenv("MLFLOW_TRACKING_USERNAME")
+        self.password = os.getenv("MLFLOW_TRACKING_PASSWORD")
 
     def get_data_loader(self):
         annotation_labels = label_to_id(self.config.annotations_path)
@@ -116,29 +123,19 @@ class Evalaution:
         scores = {"F1 Macro": self.f1_macro, "F1 Micro":self.f1_micro, "Precision": self.precision, "Recall":self.recall}
         save_json(path=Path("scores.json"), data=scores)
 
-
-    
-    def log_into_mlflow(self):
-        mlflow.set_registry_uri(self.config.mlflow_uri)
-        tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
-        
-        with mlflow.start_run():
-            mlflow.log_params(self.config.all_params)
-            print("mlflow--------------")
-            mlflow.log_metrics(
-                {"F1 Macro": self.f1_macro, "F1 Micro":self.f1_micro, "Precision": self.precision, "Recall":self.recall}
-            )
-            # # Model registry does not work with file store
-            # if tracking_url_type_store != "file":
  
-            #     # Register the model
-            #     # There are other ways to use the Model Registry, which depends on the use case,
-            #     # please refer to the doc for more information:
-            #     # https://mlflow.org/docs/latest/model-registry.html#api-workflow
-            #     mlflow.keras.log_model(self.model, "model", registered_model_name="VGG16Model")
-            # else:
-            #     mlflow.keras.log_model(self.model, "model")
-
-    
+    def log_into_mlflow(self):
+        # mlflow.set_registry_uri(self.config.mlflow_uri)
+        mlflow.set_tracking_uri(self.config.mlflow_uri)
+        tracking_url_type_store = urlparse(mlflow. get_tracking_uri()).scheme
+        print("Active MLflow URI:", mlflow.get_tracking_uri())
+        print(tracking_url_type_store)
+        
+        try:
+            with mlflow.start_run():
+                mlflow.log_params(self.config.all_params)
+                mlflow.log_metrics({"F1 Macro": self.f1_macro, "F1 Micro": self.f1_micro,"Precision": self.precision, "Recall":self.recall})
+        except Exception as e:
+            print(f"Error while logging to MLflow: {e}")
 
     

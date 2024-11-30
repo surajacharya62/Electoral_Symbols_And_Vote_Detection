@@ -451,36 +451,47 @@
                                     </div>
                                     <form action="/cropimage" method="post" enctype="multipart/form-data" class="form-horizontal">
                                      
-                                    <div class="card-body card-block">
-                                        
-                                       
-                                            <div class="row form-group">
-                                                <!-- <div class="col col-md-3">
-                                                    <label for="file-input" class=" form-control-label">Up input</label>
+                                            <!-- <div class="card-body card-block">
+                                                                                  
+                                                <div class="row form-group">
+                                                            
+                                                        <div class="row form-group">
+                                                            <div class="col col-md-5">
+                                                                <label for="file-multiple-input" class=" form-control-label">Upload Image</label>
+                                                            </div>
+                                                            <div class="col-12 col-md-7">
+                                                                <input type="file" id="file-multiple-input" multiple name="files"  class="form-control-file">
+                                                            </div>
+                                                        </div>
+                                                    
                                                 </div>
-                                                <div class="col-12 col-md-9">
-                                                    <input type="file" id="file-input" name="file-input" class="form-control-file">
+                                                <div class="card-footer">
+                                                    <button type="submit" class="btn btn-primary btn-sm">
+                                                        <i class="fa fa-dot-circle-o"></i> Submit
+                                                    </button>
+                                                    <button type="reset" class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-ban"></i> Reset
+                                                    </button> 
                                                 </div>
                                             </div> -->
-                                            <div class="row form-group">
-                                                <div class="col col-md-5">
-                                                    <label for="file-multiple-input" class=" form-control-label">Upload Image</label>
-                                                </div>
-                                                <div class="col-12 col-md-7">
-                                                    <input type="file" id="file-multiple-input" multiple name="files"  class="form-control-file">
+
+
+                                      <!--Image-->
+                                        <div>
+                                            <div class="mb-4 d-flex justify-content-center">
+                                                <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                                alt="example placeholder" style="width: 300px;" />
+                                            </div>
+                                            <div class="d-flex justify-content-center">
+                                                <div data-mdb-ripple-init class="btn btn-primary btn-rounded">
+                                                    <label class="form-label text-white m-1" for="customFile1">Choose file</label>
+                                                    <input type="file" class="form-control d-none" id="customFile1" onchange="displaySelectedImage(event, 'selectedImage')" />
                                                 </div>
                                             </div>
+                                        </div>
                                         
-                                    </div>
-                                    <div class="card-footer">
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-dot-circle-o"></i> Submit
-                                        </button>
-                                        <!-- <button type="reset" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-ban"></i> Reset
-                                        </button> -->
-                                    </div>
-                                </form>
+
+                                     </form>
                                 </div>
                                 
                             </div>
@@ -489,13 +500,17 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                    <p>Copyright © 2023. All rights reserved</a>.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+          
+
+         
         </div>
 
     </div>
@@ -523,6 +538,7 @@
 
     <!-- Main JS-->
     <script src="../../static/js/main.js"></script>
+    <script src="../../static/js/selectimage.js"></script>
 
 </body>
 

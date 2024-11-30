@@ -152,8 +152,8 @@ class Metrics():
         f1_micro = 2 * (precision_micro * recall_micro) / (precision_micro + recall_micro) if (precision_micro + recall_micro) > 0 else 0
 
         print(f"Micro F1 Score: {f1_micro}")
-        print(f"Micro-average Precision: {precision_micro}")
-        print(f"Micro-average Recall: {recall_micro}")
+        print(f"Average Precision: {precision_micro}")
+        print(f"Average Recall: {recall_micro}")
 
         return macro_f1_score, f1_micro, precision_micro, recall_micro
        

@@ -1081,3 +1081,140 @@ x===================x]
 [2024-11-30 13:48:38,081: INFO: main: >>>>>> stage Model evaluation stage completed <<<<
 
 x======x]
+[2024-11-30 15:36:33,994: INFO: main: *******************]
+[2024-11-30 15:36:33,994: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-30 15:36:33,994: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 15:36:33,994: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 15:36:33,994: INFO: common: created directory at: artifacts]
+[2024-11-30 15:36:33,994: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-30 15:36:33,994: INFO: main: >>>>> stage Prepare base model stage completed <<<<
+
+x===================x]
+[2024-11-30 15:36:33,994: INFO: main: **************]
+[2024-11-30 15:36:33,994: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-30 15:36:34,003: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 15:36:34,004: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 15:36:34,005: INFO: common: created directory at: artifacts]
+[2024-11-30 15:36:34,025: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-30 16:07:06,798: INFO: common: json file saved at: scores.json]
+[2024-11-30 16:07:07,240: INFO: main: >>>>>> stage Model evaluation stage completed <<<<
+
+x======x]
+[2024-11-30 16:43:40,318: INFO: main: *******************]
+[2024-11-30 16:43:40,318: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-30 16:43:40,336: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 16:43:40,336: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 16:43:40,336: INFO: common: created directory at: artifacts]
+[2024-11-30 16:43:40,336: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-30 16:43:40,336: INFO: main: >>>>> stage Prepare base model stage completed <<<<
+
+x===================x]
+[2024-11-30 16:43:40,336: INFO: main: **************]
+[2024-11-30 16:43:40,336: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-30 16:43:40,336: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 16:43:40,336: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 16:43:40,336: INFO: common: created directory at: artifacts]
+[2024-11-30 16:43:40,366: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-30 17:13:32,739: INFO: common: json file saved at: scores.json]
+[2024-11-30 17:13:33,961: INFO: main: >>>>>> stage Model evaluation stage completed <<<<
+
+x======x]
+[2024-11-30 17:30:37,328: INFO: main: *******************]
+[2024-11-30 17:30:37,328: INFO: main: >>>>>> stage Prepare base model stage started <<<<]
+[2024-11-30 17:30:37,331: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 17:30:37,332: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 17:30:37,332: INFO: common: created directory at: artifacts]
+[2024-11-30 17:30:37,333: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-30 17:30:37,333: INFO: main: >>>>> stage Prepare base model stage completed <<<<
+
+x===================x]
+[2024-11-30 17:30:37,333: INFO: main: **************]
+[2024-11-30 17:30:37,333: INFO: main: >>>>>>> stage Model evaluation stage started <<<<]
+[2024-11-30 17:30:37,335: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 17:30:37,336: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 17:30:37,337: INFO: common: created directory at: artifacts]
+[2024-11-30 17:30:37,357: INFO: common: created directory at: artifacts/trained_models]
+[2024-11-30 18:12:08,390: INFO: common: json file saved at: scores.json]
+[2024-11-30 18:12:10,705: INFO: main: >>>>>> stage Model evaluation stage completed <<<<
+
+x======x]
+[2024-11-30 22:34:32,333: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-30 22:34:32,334: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 22:34:32,335: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 22:34:32,336: INFO: common: created directory at: artifacts]
+[2024-11-30 22:34:32,337: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-30 22:34:32,338: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 22:34:39,671: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 22:34:40,028: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+
+x==================x]
+[2024-11-30 22:37:20,848: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-30 22:37:20,850: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 22:37:20,851: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 22:37:20,852: INFO: common: created directory at: artifacts]
+[2024-11-30 22:37:20,852: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-30 22:37:20,853: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 22:37:27,908: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 22:37:28,185: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+
+x==================x]
+[2024-11-30 22:48:18,283: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-30 22:48:18,283: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 22:48:18,283: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 22:48:18,283: INFO: common: created directory at: artifacts]
+[2024-11-30 22:48:18,283: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-30 22:48:18,283: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 22:48:25,487: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 22:48:25,781: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+
+x==================x]
+[2024-11-30 22:48:48,407: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-30 22:48:48,407: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 22:48:48,407: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 22:48:48,407: INFO: common: created directory at: artifacts]
+[2024-11-30 22:48:48,407: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-30 22:48:48,407: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 22:48:55,133: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 22:48:55,408: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+
+x==================x]
+[2024-11-30 23:13:56,323: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-30 23:13:56,323: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 23:13:56,323: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 23:13:56,323: INFO: common: created directory at: artifacts]
+[2024-11-30 23:13:56,323: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-30 23:13:56,323: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 23:14:03,611: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 23:14:03,874: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+
+x==================x]
+[2024-11-30 23:19:55,608: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-30 23:19:55,610: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 23:19:55,611: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 23:19:55,611: INFO: common: created directory at: artifacts]
+[2024-11-30 23:19:55,611: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-30 23:19:55,612: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 23:20:02,951: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 23:20:03,260: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+
+x==================x]
+[2024-11-30 23:20:38,659: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-30 23:20:38,660: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 23:20:38,661: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 23:20:38,662: INFO: common: created directory at: artifacts]
+[2024-11-30 23:20:38,662: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-30 23:20:38,663: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 23:20:45,676: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 23:20:45,983: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+
+x==================x]
+[2024-11-30 23:26:24,434: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-11-30 23:26:24,435: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-11-30 23:26:24,438: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-11-30 23:26:24,438: INFO: common: created directory at: artifacts]
+[2024-11-30 23:26:24,438: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-11-30 23:26:24,438: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 23:26:31,551: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-11-30 23:26:31,814: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+
+x==================x]
