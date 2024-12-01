@@ -1416,3 +1416,23 @@ x==================x]
 [2024-12-01 13:46:15,200: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
 
 x==================x]
+[2024-12-01 14:28:33,009: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-12-01 14:28:33,009: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 14:28:33,009: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 14:28:33,009: INFO: common: created directory at: artifacts]
+[2024-12-01 14:28:33,009: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-01 14:28:33,009: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-12-01 14:28:40,326: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-12-01 14:28:40,594: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+
+x==================x]
+[2024-12-01 14:36:00,961: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-12-01 14:36:00,961: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 14:36:00,961: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 14:36:00,961: INFO: common: created directory at: artifacts]
+[2024-12-01 14:36:00,961: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-01 14:36:00,961: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-12-01 14:36:08,656: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-12-01 14:36:08,911: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+
+x==================x]
