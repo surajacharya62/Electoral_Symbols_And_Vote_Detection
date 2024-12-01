@@ -9,5 +9,5 @@ src/modules.egg-info/top_level.txt
 src/modules/ballot_creation/__init__.py
 src/modules/ballot_creation/extract_symbol.py
 src/modules/ballot_creation/resize_image.py
-src/utils/__init__.py
-src/utils/common.py
+src/modules/utils/__init__.py
+src/modules/utils/common.py

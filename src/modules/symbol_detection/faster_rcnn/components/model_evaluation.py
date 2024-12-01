@@ -6,7 +6,7 @@ from modules.symbol_detection.faster_rcnn.components.metrics import Metrics
 from modules.vote_validation.faster_rcnn.validate_vote import ValidateVote
 from modules.symbol_detection.faster_rcnn.utils.faster_rcnn_utils import label_to_id,get_transform,collate_fn
 from modules.symbol_detection.faster_rcnn.entity.config_entity import EvaluationConfig
-from src.utils.common import save_json
+from modules.utils.common import save_json
 
 import torch
 import os

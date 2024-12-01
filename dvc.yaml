@@ -27,7 +27,7 @@ stages:
       - src/modules/symbol_detection/faster_rcnn/pipeline/stage_01_data_ingestion.py
       - config/config.yaml
       - artifacts/data_ingestion/test
-      - artifacts/trained_models/trained_model_fasterrcnn_6_11.pth
+      - models/trained_model_fasterrcnn_6_11.pth
     params:
       - IMAGE_SIZE
       - BATCH_SIZE

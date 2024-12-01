@@ -22,6 +22,7 @@ fastapi
 opencv-python
 pthon-multipart
 python-dotenv
+dvc
 -f https://download.pytorch.org/whl/cu118
 git+https://github.com/alexhock/object-detection-metrics
 -e .
