@@ -159,7 +159,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# artifacts/
+artifacts/
 # !artifacts/trained_models/
 # !artifacts/trained_models/trained_model_fasterrcnn_6_11.pth
 src/objectdetect/

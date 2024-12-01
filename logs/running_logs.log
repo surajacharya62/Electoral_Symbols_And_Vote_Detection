@@ -1386,3 +1386,13 @@ x==================x]
 [2024-12-01 13:26:12,964: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
 
 x==================x]
+[2024-12-01 13:33:50,675: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage started <<<<<<<]
+[2024-12-01 13:33:50,678: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 13:33:50,679: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 13:33:50,680: INFO: common: created directory at: artifacts]
+[2024-12-01 13:33:50,680: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-01 13:33:50,681: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-12-01 13:33:59,992: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1N6biugOgu7Id53ayyOMt1j8iKTKYe0Zf/view?usp=sharing into file artifacts/data_ingestion/test_data_set.zip]
+[2024-12-01 13:34:00,285: INFO: stage_01_data_ingestion: >>>>>>> Stage Data Ingestion Stage completed <<<<<<<
+
+x==================x]
