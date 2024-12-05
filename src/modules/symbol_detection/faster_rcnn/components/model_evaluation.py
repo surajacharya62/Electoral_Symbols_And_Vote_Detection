@@ -1,3 +1,11 @@
+import torch
+import os
+from torch.utils.data import DataLoader
+from pathlib import Path
+import mlflow
+from urllib.parse import urlparse
+from dotenv import load_dotenv
+
 from modules.symbol_detection.faster_rcnn.components.electoral_symbol_dataset import  ElectoralSymbolDataset
 from modules.symbol_detection.faster_rcnn.components.visualize_symbols_detection import VisualizePrediction
 from modules.symbol_detection.faster_rcnn.components.compare_bounding_boxes_faster import CompareBoundingBox
@@ -7,15 +15,6 @@ from modules.vote_validation.faster_rcnn.validate_vote import ValidateVote
 from modules.symbol_detection.faster_rcnn.utils.faster_rcnn_utils import label_to_id,get_transform,collate_fn
 from modules.symbol_detection.faster_rcnn.entity.config_entity import EvaluationConfig
 from modules.utils.common import save_json
-
-import torch
-import os
-from torch.utils.data import DataLoader
-from pathlib import Path
-import mlflow
-from urllib.parse import urlparse
-from dotenv import load_dotenv
-
 
 
 load_dotenv() # Loading the environment variables
@@ -66,7 +65,7 @@ class Evalaution:
         faster_rcnn_model.load_state_dict(torch.load(self.config.path_of_model, map_location=device))
         faster_rcnn_model.eval()
         # test_data_loader = self.get_data_loader()
-       
+        
         predictions = []
         with torch.no_grad():
             for images, imageids, imagenames, target in dataset_loader:

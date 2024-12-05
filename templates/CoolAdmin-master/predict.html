@@ -449,50 +449,35 @@
                                     <div class="card-header">
                                         <strong>Basic Form</strong> Elements
                                     </div>
-                                    <form action="/cropimage" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <form action="/" method="post" enctype="multipart/form-data" class="form-horizontal">
                                      
-                                            <!-- <div class="card-body card-block">
-                                                                                  
-                                                <div class="row form-group">
-                                                            
-                                                        <div class="row form-group">
-                                                            <div class="col col-md-5">
-                                                                <label for="file-multiple-input" class=" form-control-label">Upload Image</label>
-                                                            </div>
-                                                            <div class="col-12 col-md-7">
-                                                                <input type="file" id="file-multiple-input" multiple name="files"  class="form-control-file">
-                                                            </div>
-                                                        </div>
-                                                    
-                                                </div>
-                                                <div class="card-footer">
-                                                    <button type="submit" class="btn btn-primary btn-sm">
-                                                        <i class="fa fa-dot-circle-o"></i> Submit
-                                                    </button>
-                                                    <button type="reset" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-ban"></i> Reset
-                                                    </button> 
-                                                </div>
-                                            </div> -->
-
-
-                                      <!--Image-->
-                                        <div>
+                                         <!--Image-->
+                                        
                                             <div class="mb-4 d-flex justify-content-center">
                                                 <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
                                                 alt="example placeholder" style="width: 300px;" />
                                             </div>
-                                            <div class="d-flex justify-content-center">
-                                                <div data-mdb-ripple-init class="btn btn-primary btn-rounded">
+                                           
+                                            <div class="d-flex justify-content-center gap-3">
+                                                <div data-mdb-ripple-init class="btn btn-info btn-rounded">
                                                     <label class="form-label text-white m-1" for="customFile1">Choose file</label>
-                                                    <input type="file" class="form-control d-none" id="customFile1" onchange="displaySelectedImage(event, 'selectedImage')" />
+                                                    <input type="file" class="form-control d-none" id="customFile1" name="image_file" onchange="displaySelectedImage(event, 'selectedImage')" />
                                                 </div>
-                                            </div>
-                                        </div>
+                                            
+                                                <button type="submit" class="btn btn-success btn-sm">
+                                                    <i class="fa fa-dot-circle-o"></i> Submit
+                                                </button>
+                                            </div>                           
                                         
 
                                      </form>
-                                </div>
+                                        {% if processed_image %}
+                                            <h2>Prediction Image:</h2>
+                                            <div>
+                                                <img src="{{ processed_image }}" alt="Processed Image" style="width: 300px; margin: 10px;">
+                                            </div>
+                                        {% endif %}
+                                    </div>
                                 
                             </div>
                          </div>
