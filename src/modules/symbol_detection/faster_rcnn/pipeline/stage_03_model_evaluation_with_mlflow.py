@@ -32,7 +32,7 @@ class EvaluationPipeline:
         evaluate.log_into_mlflow()
 
         # evaluate.vote_validation(test_set, images_name, model_predictions)
-
+        
 
 if __name__ == "__main__":
     try:
