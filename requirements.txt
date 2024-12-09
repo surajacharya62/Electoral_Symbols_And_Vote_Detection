@@ -20,7 +20,7 @@ openpyxl
 uvicorn
 fastapi
 opencv-python
-pthon-multipart
+python-multipart
 python-dotenv
 dvc
 -f https://download.pytorch.org/whl/cu118
