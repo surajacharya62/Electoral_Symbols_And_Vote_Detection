@@ -28,4 +28,4 @@ os.environ["MLFLOW_TRACKING_PASSWORD"]="bae467a5cfadb6e0dee59eb7356f7ad1cc5abaf0
 ````
 
 
-
+ecr_ballot uri:640752516842.dkr.ecr.us-east-1.amazonaws.com/erc_ballot

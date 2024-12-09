@@ -179,7 +179,8 @@ class VisualizePrediction():
             x1, y1, x2, y2 = box1 
             font_properties = {'family': 'Times New Roman', 'size': 4}
             grid_width = 372
-            if label_id == 15 or label_id == 40:
+
+            if label_id == 40:
 
                 rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=0.5, edgecolor='blue', facecolor='none')
                 ax.add_patch(rect)                   
@@ -201,42 +202,71 @@ class VisualizePrediction():
                     
                     # Now, create the text with actual color and set alpha back to 1
                     text.remove()  # Change: Remove initial text with alpha=0
-                    text = ax.text(x1, y_pos, line, color='#FFFFE0', fontdict=font_properties)  # Change: Added final text rendering
+                    text = ax.text(x1, y_pos, line, color='white', fontdict=font_properties)  # Change: Added final text rendering
 
                     # Add a rectangle with the same dimensions behind the text
                     highlight = patches.Rectangle((text_bb.x0, text_bb.y0), text_bb.width, text_bb.height, 
-                                                color='#006400', alpha=1, zorder=text.get_zorder()-1)
+                                                color='green', alpha=1, zorder=text.get_zorder()-1)
                     ax.add_patch(highlight)
-            else:
-                rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=0.5, edgecolor='r', facecolor='none')
-                ax.add_patch(rect)
+
+            elif label_id==15:
+                rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=0.5, edgecolor='blue', facecolor='none')
+                ax.add_patch(rect)                   
+
+                # Wrap the text
                 wrapped_lines = self.wrap_text(class_name, grid_width, font_properties, ax)
+
+                # Add text with background rectangles
                 for i, line in enumerate(wrapped_lines):
-                    # print('test_symbol', i)  # Change: Added print statement for debugging
+                    print('test_stamp', i)  # Change: Added print statement for debugging
                     # Calculate the y position for each line
                     y_pos = y1 - i * (font_properties['size'] + 1)  # Adjust line spacing as needed
                     
                     # Create text with alpha=0 for initial rendering to avoid showing at top left corner
-                    text = ax.text(x1, y_pos, line, color='#FFB6C1', fontdict=font_properties, alpha=0)  # Change: Added alpha=0
-                    fig.canvas.draw()
+                    text = ax.text(x1, y_pos, line, color='#FFFFE0', fontdict=font_properties, alpha=0)  # Change: Added alpha=0
+                    # fig.canvas.draw()
                     text_bb = text.get_window_extent(renderer=fig.canvas.get_renderer())
                     text_bb = text_bb.transformed(ax.transData.inverted())
-
+                    
                     # Now, create the text with actual color and set alpha back to 1
                     text.remove()  # Change: Remove initial text with alpha=0
-                    text = ax.text(x1, y_pos, line, color='#FFB6C1', fontdict=font_properties)  # Change: Added final text rendering
+                    text = ax.text(x1, y_pos, line, color='white', fontdict=font_properties)  # Change: Added final text rendering
 
                     # Add a rectangle with the same dimensions behind the text
                     highlight = patches.Rectangle((text_bb.x0, text_bb.y0), text_bb.width, text_bb.height, 
-                                                color ='#4B0082', alpha=1, zorder=text.get_zorder()-1)
+                                                color='red', alpha=1, zorder=text.get_zorder()-1)
                     ax.add_patch(highlight)
-
-            # Add label text
-            # label_text = f"{label}"  # Replace `label` with a mapping to the actual class name if you have one
+            
+            else:
+                    rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=0.5, edgecolor='r', facecolor='none')
+                    ax.add_patch(rect)
+                    wrapped_lines = self.wrap_text(class_name, grid_width, font_properties, ax)
+                    for i, line in enumerate(wrapped_lines):
+                        # print('test_symbol', i)  # Change: Added print statement for debugging
+                        # Calculate the y position for each line
+                        y_pos = y1 - i * (font_properties['size'] + 1)  # Adjust line spacing as needed
                         
+                        # Create text with alpha=0 for initial rendering to avoid showing at top left corner
+                        text = ax.text(x1, y_pos, line, color='black', fontdict=font_properties, alpha=0)  # Change: Added alpha=0
+                        fig.canvas.draw()
+                        text_bb = text.get_window_extent(renderer=fig.canvas.get_renderer())
+                        text_bb = text_bb.transformed(ax.transData.inverted())
+
+                        # Now, create the text with actual color and set alpha back to 1
+                        text.remove()  # Change: Remove initial text with alpha=0
+                        text = ax.text(x1, y_pos, line, color='white', fontdict=font_properties)  # Change: Added final text rendering
+
+                        # Add a rectangle with the same dimensions behind the text
+                        highlight = patches.Rectangle((text_bb.x0, text_bb.y0), text_bb.width, text_bb.height, 
+                                                    color ='#800000', alpha=1, zorder=text.get_zorder()-1)
+                        ax.add_patch(highlight)
+
+                # Add label text
+                # label_text = f"{label}"  # Replace `label` with a mapping to the actual class name if you have one
+                            
         
         plt.axis('off')  # Optional: Remove axes for cleaner visualization
-        plt.savefig(f'./static/images/predict_image/{image_name}', bbox_inches='tight', pad_inches=0, dpi=300)           
+        plt.savefig(f'./static/vote_results/visualize/{image_name}', bbox_inches='tight', pad_inches=0, dpi=300)           
         plt.close()
             
                     

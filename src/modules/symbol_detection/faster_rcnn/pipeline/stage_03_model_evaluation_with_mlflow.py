@@ -29,7 +29,7 @@ class EvaluationPipeline:
 
         evaluate.metrics_calculation(test_set,model_predictions)
 
-        evaluate.log_into_mlflow()
+        # evaluate.log_into_mlflow()
 
         # evaluate.vote_validation(test_set, images_name, model_predictions)
         
