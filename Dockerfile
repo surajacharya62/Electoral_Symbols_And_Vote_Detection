@@ -2,7 +2,6 @@ FROM python:3.8-slim-buster
 
 RUN apt update -y && \    
     apt install git awscli -y \
-    apt clean && \
     rm -rf /var/lib/apt/lists/*
 
 
