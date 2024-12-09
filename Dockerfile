@@ -1,8 +1,7 @@
 FROM python:3.8-slim-buster
 
 RUN apt update -y && \    
-    apt install git awscli -y \
-    rm -rf /var/lib/apt/lists/*
+    apt install git awscli -y 
 
 
 #Setting the working directory
