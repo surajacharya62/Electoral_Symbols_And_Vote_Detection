@@ -13,4 +13,6 @@ COPY . /app
 #Installing Python dependencies
 RUN pip install -r requirements.txt
 
-CMD ["python3", "server.py"]
+EXPOSE 8001
+# CMD ["python3", "server.py"]
+CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8001"]
