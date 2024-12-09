@@ -10,7 +10,7 @@ data_ingestion:
 
 base_model:
   root_dir: artifacts/trained_models
-  base_model_path: models/trained_model_fasterrcnn_6_11.pth
+  base_model_path: models/trained_models/trained_model_fasterrcnn_6_11.pth
   test_images_path: artifacts/data_ingestion/test
   annotations_path: artifacts/data_ingestion/annotations.csv
   faster_rcnn_files_path: artifacts/faster_rcnn_files
