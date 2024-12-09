@@ -8,6 +8,7 @@ from pathlib import Path
 import numpy as np
 import cv2
 import os
+import json
 from torchvision.transforms.functional import to_tensor 
 
 
@@ -23,78 +24,39 @@ predict_obj = PredictionPipeline()
 
 
 app.mount("/static", StaticFiles(directory="./static"), name="static")
-app.mount("/processed_image", StaticFiles(directory="./static/images/predict_image"), name="processed_image")
+app.mount("/processed_image", StaticFiles(directory="./static/vote_results/visualize"), name="processed_image")
 
 
 
 templates = Jinja2Templates(directory="./templates/CoolAdmin-master")
 
-
-@app.get("/cropimage",response_class=HTMLResponse)
-async def crop(request: Request):
-    return templates.TemplateResponse("form.html",{"request":request})
-
-
-@app.post("/cropimage",response_class=HTMLResponse) 
-async def crop(files: list[UploadFile] = File(...)): 
-
-    if files:
-        for file in files: 
-            if file.content_type in ["image/jpeg","image/png","image/jpg"]:
-                print(file.filename)
-                contents = await file.read()
-                nparr = np.frombuffer(contents, np.uint8)
-                img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-                
-                crop_image.crop_symbol_from_image(img) 
-            
-            # image_suffix = Path(file.filename).suffix
-            # with tempfile.NamedTemporaryFile(suffix='.jepg', delete=False)as image_temp:
-            #     image_temp_path = image_temp.name
-            #     print(image_temp_path)
-            #     shutil.copyfileobj(image.file, image_temp)
-            #     crop_image.crop_symbol_from_image(image_temp_path) 
-            else:
-                print(f"Invalid image format:{file.filename}")
-
-    else:
-        raise HTTPException(status_code=400, detail="Image file not recieved")
-
-
-@app.get("/resizeimage",response_class=HTMLResponse)
-async def crop(request: Request):
-    return templates.TemplateResponse("resize_image.html",{"request":request})
-
-
-@app.post("/resizeimage",response_class=HTMLResponse) 
-async def crop(files: list[UploadFile] = File(...)): 
-
-    images = [] 
-
-    if files:
-        for file in files:   
-            print(file.content_type)                  
-            contents = await file.read()
-            nparr = np.frombuffer(contents, np.uint8)
-            img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)            
-            images.append(img)       
-
-        resize_image.resize_image(images)
-    else: 
-        raise HTTPException(status_code=400, detail="Image file not recieved")
-
-@app.get("/display_image",response_class=HTMLResponse)
-async def predict(request: Request,processed_image: str = None):
-    return templates.TemplateResponse("display-image.html",{"request":request,"processed_image": processed_image})
+def load_json(filename="vote.json"):
+    with open(filename, "r") as f:
+        return json.load(f)
 
 
 @app.get("/",response_class=HTMLResponse)
-async def predict(request: Request,processed_image: str = None):
-    return templates.TemplateResponse("predict.html",{"request":request,"processed_image": processed_image})
+async def home(request: Request):
+    return templates.TemplateResponse("base.html",{"request":request})
 
 
-@app.post("/",response_class=HTMLResponse) 
-async def predict(image_file: UploadFile = File(...)): 
+@app.get("/display_prediction",response_class=HTMLResponse)
+async def display_prediction(request: Request,processed_image: str = None):
+    try:
+        json_data = load_json()
+    except FileNotFoundError:
+        json_data = {}
+    return templates.TemplateResponse("display-prediction.html",{"request":request,"processed_image": processed_image, "data": json_data})
+
+
+@app.get("/select_ballot",response_class=HTMLResponse)
+async def select_ballot(request: Request,processed_image: str = None):
+    return templates.TemplateResponse("select-ballot.html",{"request":request,"processed_image": processed_image})
+ 
+
+
+@app.post("/process_ballot",response_class=HTMLResponse) 
+async def process_ballot(image_file: UploadFile = File(...)): 
 
     images = [] 
 
@@ -119,7 +81,7 @@ async def predict(image_file: UploadFile = File(...)):
     predict_obj.visualize(img, image_name)
     predict_obj.validate_vote(img,image_name)
 
-    return RedirectResponse(url=f"/display_image?processed_image=processed_image/{image_file.filename}", status_code=303)
+    return RedirectResponse(url=f"/display_prediction?processed_image=processed_image/{image_file.filename}", status_code=303)
 
 
     # except Exception as e: 

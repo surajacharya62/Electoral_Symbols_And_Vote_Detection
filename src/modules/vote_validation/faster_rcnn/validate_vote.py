@@ -9,9 +9,11 @@ import os
 from PIL import Image
 import torch
 import numpy as np
+from pathlib import Path
 
 
 from modules.symbol_detection.faster_rcnn.utils.faster_rcnn_utils import torch_nms, reconstruct_grid_cells,is_stamp_valid, calculate_iou, is_stamp_for_symbol
+from modules.utils.common import save_json
 
 warnings.filterwarnings('ignore', '.*clipping input data.*')
 
@@ -155,7 +157,7 @@ class ValidateVote():
                                 results.append((image_name, class_name, actual_label, 'valid', 'valid','valid stamp and valid symbol', closet_distance))
                                 print('Symbols' + str(id_to_label))
                                 print('Vote: ' + class_name + "|" + "valid|" + "valid stamp and valid symbol")
-                                # plt.close()
+                                                                
                             else:
                                 
                                 rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=1, edgecolor='r', facecolor='none')                
@@ -446,7 +448,7 @@ class ValidateVote():
                         # print(filtered_labels_and_bboxes, 'filterboxes')
                         # true_label, true_box = filtered_labels_and_bboxes[0],filtered_labels_and_bboxes[1]
                         symbol_bounding_boxes = [bbox for _, bbox in filtered_labels_and_bboxes]
-                        print("++++++++++++")
+                       
                         print(symbol_bounding_boxes)
                         # t_box = []
                         # Printing the bounding boxes
@@ -476,8 +478,9 @@ class ValidateVote():
                             plt.close()
                             results.append((image_name, class_name, actual_label, 'valid', 'valid','valid stamp and valid symbol', closet_distance))
                             print('Symbols' + str(id_to_label))
-                            print('Vote: ' + class_name + "|" + "valid|" + "valid stamp and valid symbol")
-                            # plt.close()
+                            print('Vote: ' + class_name + "|" + "valid|" + "valid stamp and valid symbol")                            
+                            vote = {"Image_id": image_name, "Vote_symbol":class_name, "Prediction": 'Valid symbol', "Remarks":'Valid stamp and vote'}
+                            save_json(path=Path("vote.json"), data=vote)
                         else:
                             
                             rect = patches.Rectangle((x1, y1), x2-x1, y2-y1, linewidth=1, edgecolor='r', facecolor='none')                
@@ -493,6 +496,8 @@ class ValidateVote():
                             # print(image_name, actual_labels, label_id, stamp_box )
                             print('Symbols' + str(id_to_label))
                             print('Vote: ' + class_name + "|" + "invalid|" + "invalid symbol or invalid stamp")
+                            vote = {"Image_id": image_name, "Vote_symbol":class_name, "Prediction": 'Invalid symbol', "Remarks":'Invalid symbol or stamp'}
+                            save_json(path=Path("vote.json"), data=vote)
                     
                     else:
                         x1, y1, x2, y2 = symbol_box
@@ -509,7 +514,9 @@ class ValidateVote():
                         plt.close()
                         results.append((image_name, class_name, actual_label,'invalid', 'invalid', 'valid vote and invalid symbol',closet_distance))
                         print('Symbols' + str(id_to_label))
-                        print('Vote: ' + class_name + "|" + "invalid|" + "valid vote and invalid symbol")                            
+                        print('Vote: ' + class_name + "|" + "invalid|" + "valid vote and invalid symbol")    
+                        vote = {"Image_id": image_name, "Vote_symbol":class_name, "Prediction": 'Invalid symbol', "Remarks":'Valid vote and invalid symbol'}
+                        save_json(path=Path("vote.json"), data=vote)                        
 
                 else:
                     # print(bounding_box, image_name, grid_cells)
@@ -528,7 +535,8 @@ class ValidateVote():
                     results.append((image_name, class_name, actual_label, 'invalid','invalid', 'stamp not inside cell1','Nan'))
                     print('Symbols' + str(id_to_label))
                     print('Vote: ' + class_name + "|" + "invalid|" + "stamp not inside cell")
-                    # plt.close()
+                    vote = {"Image_id": image_name, "Vote_symbol":class_name, "Prediction": 'Invalid symbol', "Remarks":'Stamp not inside cell1'}
+                    save_json(path=Path("vote.json"), data=vote)  
 
             elif label_id == invalid_stamp_id:
                 # print(label_id, image_name)
@@ -545,11 +553,14 @@ class ValidateVote():
 
                     # results.append((image_name, class_name, 'invalid', 'invalid stamp', "nan"))
                     plt.axis('off')  # Optional: Remove axes for cleaner visualization
-                    plt.savefig(f'./output/vote_validation/faster_rcnn/invalid_{image_name}.jpg', bbox_inches='tight', pad_inches=0,dpi=300)
+                    plt.savefig(f'./output/vote_validation/faster_rcnn/invalid_{image_name}', bbox_inches='tight', pad_inches=0,dpi=300)
                     plt.close()
                     results.append((image_name, class_name, actual_label, 'invalid','invalid', 'invalid stamp', "nan"))
                     print('Symbols' + str(id_to_label))
                     print('Vote: ' + class_name + "|" + "invalid|" + "invalid stamp")
+                    vote = {"Image_id": image_name, "Vote_symbol":class_name, "Prediction": 'Invalid symbol', "Remarks":'Invalid stamp'}
+                    save_json(path=Path("vote.json"), data=vote)  
+                    
 
                 else:
                     x1, y1, x2, y2 = bounding_box
@@ -567,6 +578,8 @@ class ValidateVote():
                     results.append((image_name, class_name, actual_label, 'invalid','invalid','Stamp not inside cell','nan'))
                     print('Symbols' + str(id_to_label))
                     print('Vote: ' + class_name + "|" + "invalid|" + "Stamp not inside cell")
+                    vote = {"Image_id": image_name, "Vote_symbol":class_name, "Prediction": 'Invalid symbol', "Remarks":'Stamp not inside cell1'}
+                    save_json(path=Path("vote.json"), data=vote)  
 
             elif all(x not in label_ids for x in [15, 40]):
                 x1, y1, x2, y2 = bounding_box
@@ -582,6 +595,8 @@ class ValidateVote():
                 results.append((image_name, 'no vote',actual_label,'invalid', 'no vote', 'no vote','nan'))
                 print('Symbols' + str(id_to_label))
                 print('Vote: ' + 'stamp not detected' + "|" + "invalid|" + "no stamp")  
+                vote = {"Image_id": image_name, "Vote_symbol":'No vote detected', "Prediction": 'Invalid symbol', "Remarks":'No stamp detected'}
+                save_json(path=Path("vote.json"), data=vote)  
                 break
 
             elif all(x in label_ids for x in [15, 40]):
@@ -597,6 +612,8 @@ class ValidateVote():
                 results.append((image_name, 'multiple stamp detected', actual_label,'invalid', 'invalid', 'multi stamp','nan'))
                 print('Symbols' + str(id_to_label))
                 print('Vote: ' + 'multiple stamp detected' + "|" + "invalid|" + "mulit stamp")  
+                vote = {"Image_id": image_name, "Vote_symbol":'Multiple stamp detected', "Prediction": 'Invalid symbol', "Remarks":'Mulitple stamp'}
+                save_json(path=Path("vote.json"), data=vote)  
                 break 
             
             elif total_count_valid_invalid > 1:
@@ -612,6 +629,8 @@ class ValidateVote():
                 results.append((image_name, 'multiple stamp detected',actual_label,'invalid', 'invalid', 'multi stamp','nan'))
                 print('Symbols' + str(id_to_label))
                 print('Vote: ' + 'multiple stamp detected' + "|" + "invalid|" + "mulit stamp")  
+                vote = {"Image_id": image_name, "Vote_symbol":'Multiple stamp detected', "Prediction": 'Invalid symbol', "Remarks":'Multiple stam'}
+                save_json(path=Path("vote.json"), data=vote)  
                 break
 
             elif count_15 > 1:
@@ -634,7 +653,9 @@ class ValidateVote():
                 plt.close()
                 results.append((image_name, 'multiple stamp detected',actual_label,'invalid', 'invalid', 'multi stamp','nan'))
                 print('Symbols' + str(id_to_label))
-                print('Vote: ' + 'multiple stamp detected' + "|" + "invalid|" + "mulit stamp")  
+                print('Vote: ' + 'multiple stamp detected' + "|" + "invalid|" + "mulit stamp") 
+                vote = {"Image_id": image_name, "Vote_symbol":'Multiple stamp detected', "Prediction": 'Invalid symbol', "Remarks":'Multiple stamp'}
+                save_json(path=Path("vote.json"), data=vote)   
                 break
             
             elif count_40 > 1:  
@@ -658,6 +679,8 @@ class ValidateVote():
                 results.append((image_name, 'multiple stamp detected',actual_label,'valid', 'invalid', 'multi stamp','nan'))
                 print('Symbols' + str(id_to_label))
                 print('Vote: ' + 'multiple stamp detected' + "|" + "invalid|" + "mulit stamp")  
+                vote = {"Image_id": image_name, "Vote_symbol":'Multiple stamp deteted', "Prediction": 'Invalid symbol', "Remarks":'Mulitple stamp'}
+                save_json(path=Path("vote.json"), data=vote)  
                 break
 
         #   Symbols: 1-Tree 2-Sun …. and Vote - Tree|Invalid|No stamp.                    

@@ -1,0 +1,66 @@
+.header-content {
+    text-align: center; /* Centers text horizontally */
+    display: flex;
+    flex-direction: column; /* Ensures h3 and h5 stack vertically */
+    justify-content: center; /* Centers content vertically */
+    height: 100%; /* Matches the height of the parent header */
+    width: 100%; /* Ensures it spans the full width of the header */
+}
+
+.header-content h3,
+.header-content h5 {
+    margin: 0; /* Removes default margins */
+    color: #2481cc; /* Applies the text color */
+}
+
+.header-content h3 {
+    font-size: 18px; /* Adjust font size for h3 */
+    font-weight: bold; /* Makes the title bold */
+}
+
+.header-content h5 {
+    font-size: 14px; /* Adjust font size for h5 */
+    margin-top: 5px; /* Adds some spacing between h3 and h5 */
+
+
+
+/*-----for instruction to use menu */
+}.highlighted-link {
+    background-color: #b2d7f0; /* Light blue background */
+    color: white; /* White text */
+    font-weight: bold; /* Bold text */
+    padding: 5px 10px; /* Padding around the link */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+}
+
+.highlighted-link:hover {
+    background-color: #1e6b9e; /* Darker shade on hover */
+    color: #fff; /* White text on hover */
+}
+
+
+
+/* .highlighted-link {
+    color: #2481cc; 
+    font-weight: bold;
+    text-decoration: none; 
+    position: relative;
+}
+
+.highlighted-link:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #2481cc;
+    left: 0;
+    bottom: -2px;
+    transition: width 0.3s;
+}
+
+.highlighted-link:hover:before {
+    width: 100%; 
+} 
+*/
+
