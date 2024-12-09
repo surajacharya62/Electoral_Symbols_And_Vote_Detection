@@ -164,4 +164,4 @@ cython_debug/
 # !artifacts/trained_models/trained_model_fasterrcnn_6_11.pth
 src/objectdetect/
 src/modules.egg-info/
-models/
+models/trained_model_fasterrcnn_6_11.pth
