@@ -1,7 +1,7 @@
 FROM python:3.8-slim-buster
 
 RUN apt update -y && \    
-    apt install git awscli -y 
+    apt install git awscli libgl1-mesa-glx -y 
 
 
 #Setting the working directory
