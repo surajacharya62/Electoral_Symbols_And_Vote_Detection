@@ -12,14 +12,14 @@ import json
 from torchvision.transforms.functional import to_tensor 
 
 
-from modules.ballot_creation.extract_symbol import ImageCrop
-from modules.ballot_creation.resize_image import ImageResize
+# from modules.ballot_creation.extract_symbol import ImageCrop
+# from modules.ballot_creation.resize_image import ImageResize
 from modules.symbol_detection.faster_rcnn.pipeline.prediction import PredictionPipeline
 
 
 app = FastAPI()
-crop_image = ImageCrop() 
-resize_image = ImageResize()
+# crop_image = ImageCrop() 
+# resize_image = ImageResize()
 predict_obj = PredictionPipeline()
 
 
