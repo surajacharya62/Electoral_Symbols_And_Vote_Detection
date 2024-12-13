@@ -1,16 +1,16 @@
-FROM python:3.8-slim-buster
+FROM python:3.9
 
 # Update and install necessary libraries
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y \
     git \
-    awscli \
-    libgl1-mesa-glx \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender1 && \
-    apt-get clean
+    awscli
+    # libgl1-mesa-glx \
+    # libglib2.0-0 \
+    # libsm6 \
+    # libxext6 \
+    # libxrender1 && \
+    # apt-get clean
 
 # Setting the working directory
 WORKDIR /app
