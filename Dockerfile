@@ -2,15 +2,7 @@ FROM python:3.9
 
 # Update and install necessary libraries
 RUN apt-get update -y && \
-    apt-get install -y \
-    git \
-    awscli
-    # libgl1-mesa-glx \
-    # libglib2.0-0 \
-    # libsm6 \
-    # libxext6 \
-    # libxrender1 && \
-    # apt-get clean
+    apt-get install -y git awscli libgl1-mesa-glx libglib2.0-0
 
 # Setting the working directory
 WORKDIR /app
