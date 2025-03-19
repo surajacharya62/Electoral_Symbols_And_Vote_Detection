@@ -1,5 +1,5 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException, Request
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, RedirectResponse,Response
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import tempfile
@@ -59,34 +59,36 @@ async def select_ballot(request: Request,processed_image: str = None):
 async def process_ballot(image_file: UploadFile = File(...)): 
 
     images = [] 
+    if not image_file or not image_file.filename:
+        return RedirectResponse(url="/?error=no_file", status_code=303)
+    try:   
+        if image_file.content_type not in ['image/jpeg', 'image/png']:
+            return RedirectResponse(url="/?error=invalid_type", status_code=303)
 
-    # try:   
+        print(image_file.content_type) 
+        print(f"Processing file: {image_file.filename}, Content-Type: {image_file.content_type}")
+        # save_path = os.path.join("./static/images/predict_image", image_file)
 
-    print(image_file.content_type) 
-    print(f"Processing file: {image_file.filename}, Content-Type: {image_file.content_type}")
-    # save_path = os.path.join("./static/images/predict_image", image_file)
+        # print(f"Saving file to: {save_path}")  # Debugging print
+        image_name = image_file.filename
+        contents = await image_file.read()
+        nparr = np.frombuffer(contents, np.uint8)
+        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)   
+        if img is None:
+                raise ValueError("Invalid image format")     
 
-    # print(f"Saving file to: {save_path}")  # Debugging print
-    image_name = image_file.filename
-    contents = await image_file.read()
-    nparr = np.frombuffer(contents, np.uint8)
-    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)   
-    if img is None:
-            raise ValueError("Invalid image format")     
+        image_tensor = to_tensor(img)    
+        image_tensor = image_tensor.unsqueeze(0)   
+        
+        predict_obj.predict(image_tensor)
+        predict_obj.visualize(img, image_name)
+        predict_obj.validate_vote(img,image_name)
 
-    image_tensor = to_tensor(img)    
-    image_tensor = image_tensor.unsqueeze(0)   
-    
-    predict_obj.predict(image_tensor)
-    predict_obj.visualize(img, image_name)
-    predict_obj.validate_vote(img,image_name)
-
-    return RedirectResponse(url=f"/display_prediction?processed_image=processed_image/{image_file.filename}", status_code=303)
+        return RedirectResponse(url=f"/display_prediction?processed_image=processed_image/{image_file.filename}", status_code=303)
 
 
-    # except Exception as e: 
-    #     raise e
-
+    except Exception as e: 
+        return RedirectResponse(url="/?error=processing_error", status_code=303)
 
 
 if __name__ == "__main__":
