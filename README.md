@@ -43,12 +43,44 @@ os.environ["MLFLOW_TRACKING_PASSWORD"]="bae467a5cfadb6e0dee59eb7356f7ad1cc5abaf0
 ## AWS-CICD-Deployment-with-Github-Actions
 1. Login to AWS console.
 2. Create IAM user for deployment
+    ## Policy required for accessing ECR and EC2 to IAM user:
+    1. AmazonEC2ContainerRegistryFullAccess
+    2. AmazonEC2FullAccess
+3. create ECR(Elastic Container registry to save your docker image in aws)
+    - Save the URI: 566373416292.dkr.ecr.us-east-1.amazonaws.com/ecr_ballot
+3. Launch EC2(Ubuntu)
+    ## Setting up the docker in EC2
+    
+    ## optional
+    1. sudo apt-get update -y
+    2. sudo apt-get upgrade
 
-## With specific access
+    ## required
+    3. curl -fsSL https://get.docker.com -o get-docker.sh
+    4. sudo sh get-docker.sh
+    5. sudo usermod -aG docker ubuntu
+    6. newgrp docker
 
-1. EC2 access : It is virtual machine
+## Configure EC2 as self-hosted runner in GitHubActions:
+1. goto project setting-> 
+2. goto actions > 
+3. select runner> 
+4. create new self hosted runner 
+5. choose os
+6. then run command one by one given there
+7. Now goto "secrets and variables"
+8. select actions
+9. create new repository and provide the variables below
+    ## Setting the user access key in github secrets in GitHubActions:
+    AWS_ACCESS_KEY_ID =
 
-2. ECR: Elastic Container registry to save your docker image in aws
+    AWS_SECRET_ACCESS_KEY =
+
+    AWS_REGION = us-east-1
+
+    AWS_ECR_LOGIN_URI = ecr_ballot uri:640752516842.dkr.ecr.eu-north-1.amazonaws.com
+
+    ECR_REPOSITORY_NAME = ecr_ballot
 
 
 ## Description: About the deployment
@@ -57,49 +89,15 @@ os.environ["MLFLOW_TRACKING_PASSWORD"]="bae467a5cfadb6e0dee59eb7356f7ad1cc5abaf0
 
 2. Push docker image to ECR
 
-3. Launch EC2 
-
 4. Pull image from ECR in EC2
 
 5. Lauch docker image in EC2
 
-## Policy required for accessing ECR and EC2 to user:
 
-1. AmazonEC2ContainerRegistryFullAccess
 
-2. AmazonEC2FullAccess
-3. Create ECR repo to store/save docker image
-4. Save the URI: 566373416292.dkr.ecr.us-east-1.amazonaws.com/chicken
-5. Create EC2 machine (Ubuntu)
-6. Open EC2 and Install docker in EC2 Machine:
 
-## Setting up the docker in EC2
-## optional
 
-1. sudo apt-get update -y
 
-2. sudo apt-get upgrade
 
-## required
 
-3. curl -fsSL https://get.docker.com -o get-docker.sh
 
-4. sudo sh get-docker.sh
-
-5. sudo usermod -aG docker ubuntu
-
-6. newgrp docker
-
-## Configure EC2 as self-hosted runner in GitHubActions:
-setting->actions>runner>new self hosted runner> choose os> then run command one by one given there
-
-## Setting the user access key in github secrets in GitHubActions:
-AWS_ACCESS_KEY_ID =
-
-AWS_SECRET_ACCESS_KEY =
-
-AWS_REGION = us-east-1
-
-AWS_ECR_LOGIN_URI = ecr_ballot uri:640752516842.dkr.ecr.eu-north-1.amazonaws.com
-
-ECR_REPOSITORY_NAME = ecr_ballot
