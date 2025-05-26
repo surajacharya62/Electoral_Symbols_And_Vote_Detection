@@ -8,15 +8,15 @@ from modules.symbol_detection.faster_rcnn.pipeline.stage_03_model_evaluation_wit
 STAGE_NAME = "Data Ingestion Stage"
 
 
-try:
-    logger.info(f">>>>>>> Stage {STAGE_NAME} started <<<<<<<")
-    obj = DataIngestionTrainingPipeline()
-    obj.main()
-    logger.info(f">>>>>>> Stage {STAGE_NAME} completed <<<<<<<\nx==================x")
+# try:
+#     logger.info(f">>>>>>> Stage {STAGE_NAME} started <<<<<<<")
+#     obj = DataIngestionTrainingPipeline()
+#     obj.main()
+#     logger.info(f">>>>>>> Stage {STAGE_NAME} completed <<<<<<<\nx==================x")
 
-except Exception as e:
-    logger.exception(e)
-    raise e
+# except Exception as e:
+#     logger.exception(e)
+#     raise e
 
 
 STAGE_NAME = "Prepare base model stage"

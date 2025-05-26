@@ -66,8 +66,8 @@ async def process_ballot(image_file: UploadFile = File(...)):
             return RedirectResponse(url="/?error=invalid_type", status_code=303)
 
 
-        print(image_file.content_type) 
-        print(f"Processing file: {image_file.filename}, Cont6ent-Type: {image_file.content_type}")
+        # print(image_file.content_type) 
+        # print(f"Processing file: {image_file.filename}, Cont6ent-Type: {image_file.content_type}")
         # save_path = os.path.join("./static/images/predict_image", image_file)
 
         # print(f"Saving file to: {save_path}")  # Debugging print
