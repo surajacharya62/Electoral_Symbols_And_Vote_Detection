@@ -64,13 +64,7 @@ async def process_ballot(image_file: UploadFile = File(...)):
     try:   
         if image_file.content_type not in ['image/jpeg', 'image/png']:
             return RedirectResponse(url="/?error=invalid_type", status_code=303)
-
-
-        # print(image_file.content_type) 
-        # print(f"Processing file: {image_file.filename}, Cont6ent-Type: {image_file.content_type}")
-        # save_path = os.path.join("./static/images/predict_image", image_file)
-
-        # print(f"Saving file to: {save_path}")  # Debugging print
+      
         image_name = image_file.filename
         contents = await image_file.read()
         nparr = np.frombuffer(contents, np.uint8)
